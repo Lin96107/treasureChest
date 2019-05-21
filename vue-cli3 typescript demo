@@ -1,0 +1,38 @@
+#不用class写法
+
+import Vue from 'vue'
+
+export default Vue.extend({
+  data () {
+    return {}
+  }
+})
+
+#class写法
+
+import { Component, Vue, Watch, Prop } from 'vue-property-decorator'
+import { Route } from 'vue-router'
+
+@Component({
+  components: {},
+  mixins: []
+})
+export defalut class xxx extends Vue {
+  private a: number = 0  // 声明变量
+
+  @Prop({required: true})
+  private b!: string
+
+  @Watch('$route')
+  private onRouteChange (route: Route) {
+  
+  }
+
+  get c () {  // 计算属性
+    retrun xxx
+  }
+
+  private d () {  // 方法不用写在methods里面了
+
+  }
+}
